@@ -1,0 +1,13 @@
+https://tex.stackexchange.com/questions/664358/numberwithin-omits-period-in-appendices-when-using-springer-nature-template
+
+https://tex.stackexchange.com/questions/257364/removing-the-trailing-period-when-referencing-a-section-number
+
+https://tex.stackexchange.com/questions/278998/need-to-add-a-period-dot-after-section-number
+
+https://tex.stackexchange.com/questions/24439/how-to-add-a-dot-after-the-section-number
+
+https://tex.stackexchange.com/questions/399025/keeping-periods-after-section-numbers-but-not-when-referencing-sections
+
+https://tex.stackexchange.com/questions/191581/how-can-i-add-dot-after-the-subsection-number?rq=1
+
+https://superuser.com/questions/811779/how-to-add-a-dot-for-section-subsection-numbering-in-tex
