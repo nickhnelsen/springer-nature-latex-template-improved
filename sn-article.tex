@@ -51,7 +51,7 @@
 %\usepackage{amsthm}% already loaded in .cls file
 \usepackage{mathrsfs}%
 \usepackage[title]{appendix}%
-\usepackage{xcolor}%
+\usepackage[dvipsnames]{xcolor} % added dvipnames
 \usepackage{textcomp}%
 \usepackage{manyfoot}%
 \usepackage{booktabs}%
@@ -60,6 +60,13 @@
 \usepackage{algpseudocode}%
 \usepackage{listings}%
 %%%%
+
+%% Modify hyperref colors
+
+\colorlet{siaminlinkcolor}{green!50!black}
+\colorlet{siamexlinkcolor}{red!50!black}
+\colorlet{siamreviewcolor}{black!50}
+\hypersetup{allcolors=siaminlinkcolor,urlcolor=siamexlinkcolor}
 
 %%%%%=============================================================================%%%%
 %%%%  Remarks: This template is provided to aid authors with the preparation
@@ -77,20 +84,35 @@
 %% as per the requirement new theorem styles can be included as shown below
 \theoremstyle{thmstyleone}%
 \newtheorem{theorem}{Theorem}%  meant for continuous numbers
-%%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
+%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
 %% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
 \newtheorem{proposition}[theorem]{Proposition}% 
 %%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
+\newtheorem{corollary}[theorem]{Corollary}%
+\newtheorem*{main}{Main Theorem}%
+\newtheorem{lemma}[theorem]{Lemma}%
+\newtheorem{conjecture}{Conjecture}%
+\newtheorem*{problem}{Problem}%
 
 \theoremstyle{thmstyletwo}%
 \newtheorem{example}{Example}%
 \newtheorem{remark}{Remark}%
+\newtheorem*{notation}{Notation}%
 
 \theoremstyle{thmstylethree}%
 \newtheorem{definition}{Definition}%
+\newtheorem{assumption}{Assumption}%
 
 \raggedbottom
 %%\unnumbered% uncomment this for unnumbered level heads
+
+% Optional PDF information
+\ifpdf
+\hypersetup{
+	pdftitle={Article Title},
+	pdfauthor={F. Author, S. Author, and T. Author}
+}
+\fi
 
 \begin{document}
 
@@ -442,7 +464,7 @@ For theorem like environments, we require \verb+amsthm+ package. There are three
 \begin{tabular}{|l|p{19pc}|}
 \hline
 \verb+thmstyleone+ & Numbered, theorem head in bold font and theorem text in italic style \\\hline
-\verb+thmstyletwo+ & Numbered, theorem head in roman font and theorem text in italic style \\\hline
+\verb+thmstyletwo+ & Numbered, theorem head in bold italic font and theorem text in roman style \\\hline
 \verb+thmstylethree+ & Numbered, theorem head in bold font and theorem text in roman style \\\hline
 \end{tabular}
 \bigskip
@@ -605,6 +627,16 @@ BMC journals: \url{https://www.biomedcentral.com/getpublished/editorial-policies
 \section{Section title of first appendix}\label{secA1}
 
 An appendix contains supplementary information that is not an essential part of the text itself but which may be helpful in providing a more comprehensive understanding of the research problem or it is information that is too cumbersome to be included in the body of the paper.
+
+\subsection{Example of appendix subsection}\label{secA11}%
+Appendices may be used for helpful, supporting or essential material that would otherwise 
+clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
+tables and equations etc.
+
+\subsubsection{Example of appendix subsubection}\label{secA12}%
+Appendices may be used for helpful, supporting or essential material that would otherwise 
+clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
+tables and equations etc.
 
 %%=============================================%%
 %% For submissions to Nature Portfolio Journals %%
