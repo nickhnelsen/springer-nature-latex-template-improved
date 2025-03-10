@@ -11,3 +11,5 @@ https://tex.stackexchange.com/questions/399025/keeping-periods-after-section-num
 https://tex.stackexchange.com/questions/191581/how-can-i-add-dot-after-the-subsection-number?rq=1
 
 https://superuser.com/questions/811779/how-to-add-a-dot-for-section-subsection-numbering-in-tex
+
+https://tex.stackexchange.com/questions/226481/appendix-section-title

@@ -42,12 +42,13 @@
 %%<additional latex packages if required can be included here>
 
 \usepackage{titlesec}
-\titlelabel{\thetitle. \hskip0.1em }
+\newcommand{\mysecspace}{\hskip.5em}
+\titlelabel{\thetitle.\mysecspace}
 
 \usepackage{graphicx}%
 \usepackage{multirow}%
 \usepackage{amsmath,amssymb,amsfonts}%
-\usepackage{amsthm}%
+%\usepackage{amsthm}% already loaded in .cls file
 \usepackage{mathrsfs}%
 \usepackage[title]{appendix}%
 \usepackage{xcolor}%
@@ -312,7 +313,6 @@ As per the \LaTeX\ standards you need to use eps images for \LaTeX\ compilation 
 \includegraphics[width=0.9\textwidth]{fig.eps}
 \caption{This is a widefig. This is an example of long caption this is an example of long caption  this is an example of long caption this is an example of long caption}\label{fig1}
 \end{figure}
-
 In case of double column layout, the above format puts figure captions/images to single column width. To get spanned images, we need to provide \verb+\begin{figure*}+ \verb+...+ \verb+\end{figure*}+.
 
 For sample purpose, we have included the width of images in the optional argument of \verb+\includegraphics+ tag. Please ignore this. 
@@ -592,18 +592,20 @@ BMC journals: \url{https://www.biomedcentral.com/getpublished/editorial-policies
 
 \begin{appendices}
 
+% https://tex.stackexchange.com/a/413824
+\makeatletter
+\def\@seccntformat#1{\@ifundefined{#1@cntformat}%
+	{\csname the#1\endcsname\mysecspace}%    default
+	{\csname #1@cntformat\endcsname}}%  enable individual control
+\newcommand\section@cntformat{\appendixname\ \thesection.\mysecspace}       % section-level
+\newcommand\subsection@cntformat{\thesubsection.\mysecspace} 				% subsection-level
+\newcommand\subsubsection@cntformat{\thesubsubsection.\mysecspace} 				% subsubsection-level
+\makeatother
+
 \section{Section title of first appendix}\label{secA1}
 
 An appendix contains supplementary information that is not an essential part of the text itself but which may be helpful in providing a more comprehensive understanding of the research problem or it is information that is too cumbersome to be included in the body of the paper.
 
-\subsection{title}
-\begin{equation}
-	2+2=4
-\end{equation}
-
-\begin{equation}
-	2+2=4
-\end{equation}
 %%=============================================%%
 %% For submissions to Nature Portfolio Journals %%
 %% please use the heading ``Extended Data''.   %%
@@ -613,10 +615,10 @@ An appendix contains supplementary information that is not an essential part of 
 %% Sample for another appendix section			       %%
 %%=============================================================%%
 
-%% \section{Example of another appendix section}\label{secA2}%
-%% Appendices may be used for helpful, supporting or essential material that would otherwise 
-%% clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
-%% tables and equations etc.
+\section{Example of another appendix section}\label{secA2}%
+Appendices may be used for helpful, supporting or essential material that would otherwise 
+clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
+tables and equations etc.
 
 \end{appendices}
 
