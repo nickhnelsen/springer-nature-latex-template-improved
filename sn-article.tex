@@ -38,9 +38,12 @@
 %%\documentclass[pdflatex,sn-apa]{sn-jnl}% APA Reference Style
 %%\documentclass[pdflatex,sn-chicago]{sn-jnl}% Chicago-based Humanities Reference Style
 
+\AtBeginDocument{%
+	\geometry{bottom=1.5in}  % 1.875, 1.75, 1.5 for more text per page
+}
+
 %%%% Standard Packages
 %%<additional latex packages if required can be included here>
-
 \usepackage{titlesec}
 \newcommand{\mysecspace}{\hskip.5em}
 \titlelabel{\thetitle.\mysecspace}
@@ -114,7 +117,6 @@
 \fi
 
 \begin{document}
-\newgeometry{bottom=1.75in} % 1.875, 1.75, 1.5 for more text per page
 
 \title[Article Title]{Article Title}
 
